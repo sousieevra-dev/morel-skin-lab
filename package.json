@@ -1,0 +1,16 @@
+{
+  "name": "morel-skin-lab",
+  "version": "1.0.0",
+  "description": "Site e-commerce Morel Skin Lab",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "echo 'No build step required'"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}
