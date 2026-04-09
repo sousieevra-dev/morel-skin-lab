@@ -1,0 +1,1994 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Morel Skin Lab — Guides Beauté Premium Anti-Âge</title>
+  <meta name="description" content="Découvrez les guides beauté experts du Dr Julien Morel. Solutions anti-âge naturelles pour femmes de 45 ans et plus.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================
+       MOREL SKIN LAB — FEUILLE DE STYLES PRINCIPALE
+       ============================================ */
+
+    /* --- Variables CSS globales --- */
+    :root {
+      --fond-principal: #FAF7F2;
+      --fond-creme: #F5F0E8;
+      --accent-rose: #D4A5A5;
+      --accent-rose-clair: #E8D5C4;
+      --accent-rose-hover: #C48E8E;
+      --accent-dore: #C9A961;
+      --accent-dore-hover: #B8953F;
+      --texte-principal: #2C1810;
+      --texte-secondaire: #6B5D54;
+      --texte-clair: #8A7D75;
+      --blanc: #FFFFFF;
+      --ombre-legere: 0 2px 20px rgba(44, 24, 16, 0.06);
+      --ombre-carte: 0 8px 40px rgba(44, 24, 16, 0.08);
+      --ombre-elevee: 0 16px 60px rgba(44, 24, 16, 0.12);
+      --serif: 'Cormorant Garamond', 'Georgia', serif;
+      --sans: 'Lato', 'Helvetica Neue', sans-serif;
+      --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      --rayon-bordure: 4px;
+    }
+
+    /* --- Reset et base --- */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 18px;
+    }
+
+    body {
+      font-family: var(--sans);
+      color: var(--texte-principal);
+      background-color: var(--fond-principal);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* --- Typographie --- */
+    h1, h2, h3, h4 {
+      font-family: var(--serif);
+      font-weight: 500;
+      line-height: 1.15;
+      color: var(--texte-principal);
+    }
+
+    h1 { font-size: clamp(2.4rem, 5vw, 4rem); }
+    h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); }
+    h3 { font-size: clamp(1.3rem, 2.5vw, 1.7rem); }
+    h4 { font-size: 1.1rem; }
+
+    p {
+      font-size: 1rem;
+      color: var(--texte-secondaire);
+      max-width: 650px;
+    }
+
+    /* --- Utilitaires --- */
+    .conteneur {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 clamp(1.2rem, 4vw, 3rem);
+    }
+
+    .sur-titre {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent-dore);
+      margin-bottom: 0.8rem;
+      display: block;
+    }
+
+    .trait-dore {
+      width: 50px;
+      height: 2px;
+      background: var(--accent-dore);
+      margin-bottom: 1.5rem;
+    }
+
+    .section-entete {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .section-entete p {
+      margin: 1rem auto 0;
+    }
+
+    /* --- Boutons --- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 1rem 2.2rem;
+      border: none;
+      border-radius: var(--rayon-bordure);
+      cursor: pointer;
+      transition: var(--transition);
+      min-height: 52px;
+      text-decoration: none;
+    }
+
+    .btn-primaire {
+      background: var(--texte-principal);
+      color: var(--blanc);
+    }
+
+    .btn-primaire:hover {
+      background: #1a0e09;
+      transform: translateY(-2px);
+      box-shadow: var(--ombre-carte);
+    }
+
+    .btn-secondaire {
+      background: transparent;
+      color: var(--texte-principal);
+      border: 1.5px solid var(--texte-principal);
+    }
+
+    .btn-secondaire:hover {
+      background: var(--texte-principal);
+      color: var(--blanc);
+      transform: translateY(-2px);
+    }
+
+    .btn-dore {
+      background: var(--accent-dore);
+      color: var(--blanc);
+    }
+
+    .btn-dore:hover {
+      background: var(--accent-dore-hover);
+      transform: translateY(-2px);
+      box-shadow: var(--ombre-carte);
+    }
+
+    /* --- Animations au scroll --- */
+    .anime-entree {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .anime-entree.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .anime-delai-1 { transition-delay: 0.1s; }
+    .anime-delai-2 { transition-delay: 0.2s; }
+    .anime-delai-3 { transition-delay: 0.3s; }
+    .anime-delai-4 { transition-delay: 0.4s; }
+    .anime-delai-5 { transition-delay: 0.5s; }
+
+
+    /* ============================================
+       HEADER — Navigation fixe
+       ============================================ */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 1.2rem 0;
+      transition: background 0.4s ease, box-shadow 0.4s ease, padding 0.4s ease;
+    }
+
+    .header.defilement {
+      background: rgba(250, 247, 242, 0.97);
+      box-shadow: var(--ombre-legere);
+      padding: 0.7rem 0;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .header .conteneur {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--texte-principal);
+      letter-spacing: 0.02em;
+    }
+
+    .logo span {
+      color: var(--accent-dore);
+    }
+
+    /* Navigation desktop */
+    .nav-desktop {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-desktop a {
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--texte-secondaire);
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    .nav-desktop a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1.5px;
+      background: var(--accent-dore);
+      transition: width 0.3s ease;
+    }
+
+    .nav-desktop a:hover {
+      color: var(--texte-principal);
+    }
+
+    .nav-desktop a:hover::after {
+      width: 100%;
+    }
+
+    /* Icône panier */
+    .icone-panier {
+      position: relative;
+      width: 22px;
+      height: 22px;
+      cursor: pointer;
+    }
+
+    .icone-panier svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--texte-principal);
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .badge-panier {
+      position: absolute;
+      top: -6px;
+      right: -8px;
+      background: var(--accent-dore);
+      color: var(--blanc);
+      font-size: 0.55rem;
+      font-weight: 700;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Navigation mobile — Hamburger */
+    .btn-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .btn-hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--texte-principal);
+      transition: var(--transition);
+    }
+
+    .btn-hamburger.ouvert span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .btn-hamburger.ouvert span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .btn-hamburger.ouvert span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .nav-mobile {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(250, 247, 242, 0.98);
+      backdrop-filter: blur(20px);
+      z-index: 999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .nav-mobile.ouverte {
+      display: flex;
+    }
+
+    .nav-mobile a {
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      color: var(--texte-principal);
+      transition: color 0.3s ease;
+    }
+
+    .nav-mobile a:hover {
+      color: var(--accent-dore);
+    }
+
+
+    /* ============================================
+       HERO SECTION — Layout 2 colonnes magazine
+       ============================================ */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+      background: var(--fond-principal);
+    }
+
+    /* --- Colonne gauche : texte --- */
+    .hero-texte {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 8rem clamp(2rem, 5vw, 5rem) 4rem clamp(1.5rem, 4vw, 4rem);
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Petit trait décoratif vertical à gauche du texte */
+    .hero-texte::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: clamp(0.5rem, 2vw, 1.5rem);
+      transform: translateY(-50%);
+      width: 2px;
+      height: 80px;
+      background: linear-gradient(to bottom, transparent, var(--accent-dore), transparent);
+      opacity: 0.5;
+    }
+
+    .hero .sur-titre {
+      font-size: 0.7rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero h1 {
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.08;
+    }
+
+    .hero-description {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+      max-width: 520px;
+      color: var(--texte-secondaire);
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+
+    /* Mini-stat sous les boutons */
+    .hero-confiance {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.76rem;
+      color: var(--texte-clair);
+    }
+
+    .hero-confiance .etoiles-mini {
+      color: var(--accent-dore);
+      letter-spacing: 1px;
+      font-size: 0.8rem;
+    }
+
+    /* --- Colonne droite : image --- */
+    .hero-image {
+      position: relative;
+      min-height: 90vh;
+      overflow: hidden;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    /* Dégradé bord gauche pour transition douce vers le texte */
+    .hero-image::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 120px;
+      background: linear-gradient(
+        to right,
+        var(--fond-principal) 0%,
+        rgba(250, 247, 242, 0.6) 35%,
+        transparent 100%
+      );
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    /* Dégradé subtil en bas de l'image */
+    .hero-image::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 120px;
+      background: linear-gradient(to top, rgba(250, 247, 242, 0.5), transparent);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+
+    /* ============================================
+       BANDEAU DE CONFIANCE
+       ============================================ */
+    .bandeau-confiance {
+      background: var(--blanc);
+      border-top: 1px solid rgba(201, 169, 97, 0.15);
+      border-bottom: 1px solid rgba(201, 169, 97, 0.15);
+      padding: 1.5rem 0;
+    }
+
+    .bandeau-confiance .conteneur {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem 3rem;
+    }
+
+    .bandeau-item {
+      font-size: 0.78rem;
+      color: var(--texte-secondaire);
+      letter-spacing: 0.04em;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      white-space: nowrap;
+    }
+
+    .bandeau-item .check {
+      color: var(--accent-dore);
+      font-size: 0.9rem;
+    }
+
+
+    /* ============================================
+       SECTION NOS GUIDES (EBOOKS)
+       ============================================ */
+    .section-guides {
+      padding: 6rem 0;
+    }
+
+    .grille-guides {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem;
+    }
+
+    /* Effet magazine : la première carte plus grande */
+    .carte-guide:first-child {
+      grid-column: 1 / -1;
+    }
+
+    .carte-guide:first-child .carte-guide-inner {
+      flex-direction: row;
+      gap: 3rem;
+    }
+
+    .carte-guide:first-child .carte-guide-visuel {
+      flex: 0 0 45%;
+      max-width: 420px;
+    }
+
+    .carte-guide {
+      perspective: 800px;
+    }
+
+    .carte-guide-inner {
+      display: flex;
+      flex-direction: column;
+      background: var(--blanc);
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: var(--ombre-legere);
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+      height: 100%;
+    }
+
+    .carte-guide-inner:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--ombre-elevee);
+    }
+
+    .carte-guide-visuel {
+      position: relative;
+      overflow: hidden;
+      background: var(--fond-creme);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 280px;
+    }
+
+    .carte-guide-visuel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .carte-guide-inner:hover .carte-guide-visuel img {
+      transform: scale(1.04);
+    }
+
+    /* Numéro romain en overlay */
+    .numero-romain {
+      position: absolute;
+      top: 1rem;
+      left: 1.2rem;
+      font-family: var(--serif);
+      font-size: 2.2rem;
+      font-weight: 300;
+      color: var(--blanc);
+      opacity: 0.85;
+      text-shadow: 0 2px 15px rgba(0,0,0,0.3);
+      line-height: 1;
+    }
+
+    .carte-guide-contenu {
+      padding: 1.8rem 2rem 2rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .carte-guide-contenu h3 {
+      margin-bottom: 0.7rem;
+      font-weight: 600;
+    }
+
+    .carte-guide-contenu p {
+      font-size: 0.88rem;
+      line-height: 1.65;
+      flex: 1;
+      margin-bottom: 1.5rem;
+    }
+
+    .prix-bloc {
+      display: flex;
+      align-items: baseline;
+      gap: 0.7rem;
+      margin-bottom: 1.3rem;
+    }
+
+    .prix-barre {
+      font-size: 0.95rem;
+      color: var(--texte-clair);
+      text-decoration: line-through;
+    }
+
+    .prix-actuel {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--texte-principal);
+    }
+
+    .badge-promo {
+      background: rgba(201, 169, 97, 0.12);
+      color: var(--accent-dore);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.6rem;
+      border-radius: 3px;
+    }
+
+
+    /* ============================================
+       SECTION À PROPOS DU DR MOREL
+       ============================================ */
+    .section-apropos {
+      padding: 6rem 0;
+      background: var(--blanc);
+    }
+
+    .apropos-grille {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .apropos-portrait {
+      position: relative;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .apropos-portrait img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+    }
+
+    /* Petit cadre décoratif */
+    .apropos-portrait::before {
+      content: '';
+      position: absolute;
+      top: -12px;
+      left: -12px;
+      right: 12px;
+      bottom: 12px;
+      border: 1.5px solid var(--accent-dore);
+      border-radius: 6px;
+      z-index: -1;
+    }
+
+    .apropos-texte h2 {
+      margin-bottom: 1.2rem;
+    }
+
+    .apropos-texte > p {
+      margin-bottom: 1.5rem;
+    }
+
+    .credentials {
+      list-style: none;
+      padding: 0;
+      margin-top: 1.5rem;
+      border-top: 1px solid rgba(107, 93, 84, 0.12);
+      padding-top: 1.5rem;
+    }
+
+    .credentials li {
+      font-size: 0.85rem;
+      color: var(--texte-secondaire);
+      padding: 0.4rem 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+    }
+
+    .credentials li::before {
+      content: '—';
+      color: var(--accent-dore);
+      flex-shrink: 0;
+    }
+
+
+    /* ============================================
+       SECTION AVANT / APRÈS
+       ============================================ */
+    .section-avant-apres {
+      padding: 6rem 0;
+    }
+
+    .grille-avant-apres {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .carte-avant-apres {
+      background: var(--blanc);
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: var(--ombre-legere);
+      transition: var(--transition);
+    }
+
+    .carte-avant-apres:hover {
+      box-shadow: var(--ombre-carte);
+      transform: translateY(-4px);
+    }
+
+    .avant-apres-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+    }
+
+    .avant-apres-images img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .label-avant, .label-apres {
+      position: absolute;
+      bottom: 8px;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--blanc);
+      background: rgba(44, 24, 16, 0.65);
+      padding: 0.2rem 0.6rem;
+      border-radius: 2px;
+    }
+
+    .label-avant { left: 8px; }
+    .label-apres { right: 8px; }
+
+    .avant-apres-texte {
+      padding: 1.3rem 1.5rem;
+    }
+
+    .avant-apres-texte h4 {
+      margin-bottom: 0.3rem;
+    }
+
+    .avant-apres-texte p {
+      font-size: 0.82rem;
+      line-height: 1.6;
+    }
+
+    .avant-apres-texte .tag-guide {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-dore);
+      margin-top: 0.6rem;
+    }
+
+
+    /* ============================================
+       SECTION TÉMOIGNAGES
+       ============================================ */
+    .section-temoignages {
+      padding: 6rem 0;
+      background: var(--fond-creme);
+    }
+
+    .grille-temoignages {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .carte-temoignage {
+      background: var(--blanc);
+      border-radius: 6px;
+      padding: 2rem;
+      box-shadow: var(--ombre-legere);
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .carte-temoignage:hover {
+      box-shadow: var(--ombre-carte);
+      transform: translateY(-3px);
+    }
+
+    /* Guillemet décoratif */
+    .carte-temoignage::before {
+      content: '\201C';
+      font-family: var(--serif);
+      font-size: 4rem;
+      color: var(--accent-rose-clair);
+      position: absolute;
+      top: 0.6rem;
+      right: 1.5rem;
+      line-height: 1;
+    }
+
+    .temoignage-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .temoignage-photo {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--accent-rose-clair);
+    }
+
+    .temoignage-nom {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--texte-principal);
+    }
+
+    .temoignage-age {
+      font-size: 0.78rem;
+      color: var(--texte-clair);
+    }
+
+    .etoiles {
+      color: var(--accent-dore);
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      margin-bottom: 0.7rem;
+    }
+
+    .carte-temoignage blockquote {
+      font-size: 0.88rem;
+      font-style: italic;
+      color: var(--texte-secondaire);
+      line-height: 1.7;
+      margin-bottom: 0.8rem;
+    }
+
+    .temoignage-guide {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-dore);
+    }
+
+
+    /* ============================================
+       SECTION FAQ
+       ============================================ */
+    .section-faq {
+      padding: 6rem 0;
+    }
+
+    .faq-conteneur {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid rgba(107, 93, 84, 0.12);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.3rem 0;
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      color: var(--texte-principal);
+      text-align: left;
+      transition: color 0.3s ease;
+    }
+
+    .faq-question:hover {
+      color: var(--accent-dore);
+    }
+
+    .faq-icone {
+      font-size: 1.5rem;
+      line-height: 1;
+      color: var(--accent-dore);
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+      margin-left: 1rem;
+    }
+
+    .faq-item.ouvert .faq-icone {
+      transform: rotate(45deg);
+    }
+
+    .faq-reponse {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+    }
+
+    .faq-reponse-inner {
+      padding: 0 0 1.3rem;
+    }
+
+    .faq-reponse-inner p {
+      font-size: 0.9rem;
+      line-height: 1.75;
+    }
+
+
+    /* ============================================
+       SECTION NEWSLETTER
+       ============================================ */
+    .section-newsletter {
+      padding: 4rem 0;
+      background: linear-gradient(135deg, var(--accent-rose-clair) 0%, #e2c8b8 100%);
+    }
+
+    .newsletter-conteneur {
+      text-align: center;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .newsletter-conteneur h2 {
+      color: var(--texte-principal);
+      margin-bottom: 0.6rem;
+    }
+
+    .newsletter-conteneur p {
+      margin: 0 auto 2rem;
+      color: var(--texte-secondaire);
+      font-size: 0.92rem;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 0.8rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .newsletter-form input[type="email"] {
+      flex: 1;
+      padding: 0.9rem 1.2rem;
+      border: 1.5px solid rgba(44, 24, 16, 0.12);
+      border-radius: var(--rayon-bordure);
+      font-family: var(--sans);
+      font-size: 0.88rem;
+      background: var(--blanc);
+      color: var(--texte-principal);
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+
+    .newsletter-form input[type="email"]:focus {
+      border-color: var(--accent-dore);
+    }
+
+    .newsletter-form input[type="email"]::placeholder {
+      color: var(--texte-clair);
+    }
+
+    .newsletter-petit-texte {
+      font-size: 0.72rem;
+      color: var(--texte-secondaire);
+      opacity: 0.85;
+    }
+
+
+    /* ============================================
+       FOOTER
+       ============================================ */
+    .footer {
+      background: var(--texte-principal);
+      color: rgba(255, 255, 255, 0.7);
+      padding: 4rem 0 2rem;
+    }
+
+    .footer-grille {
+      display: grid;
+      grid-template-columns: 1.5fr repeat(4, 1fr);
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-marque .logo {
+      color: var(--blanc);
+      margin-bottom: 0.8rem;
+      display: block;
+    }
+
+    .footer-marque p {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.5);
+      line-height: 1.6;
+    }
+
+    .footer-colonne h4 {
+      color: var(--blanc);
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+    }
+
+    .footer-colonne ul {
+      list-style: none;
+    }
+
+    .footer-colonne li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-colonne a {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.55);
+      transition: color 0.3s ease;
+    }
+
+    .footer-colonne a:hover {
+      color: var(--accent-dore);
+    }
+
+    .footer-reseaux {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .footer-reseaux a {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.6);
+      transition: var(--transition);
+    }
+
+    .footer-reseaux a:hover {
+      border-color: var(--accent-dore);
+      color: var(--accent-dore);
+    }
+
+    .footer-bas {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 2rem;
+      text-align: center;
+    }
+
+    .footer-bas p {
+      font-size: 0.72rem;
+      color: rgba(255, 255, 255, 0.35);
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    .footer-bas p + p {
+      margin-top: 0.5rem;
+      font-size: 0.68rem;
+    }
+
+
+    /* ============================================
+       RESPONSIVE — TABLETTE
+       ============================================ */
+    @media (max-width: 1024px) {
+      .apropos-grille {
+        gap: 2.5rem;
+      }
+
+      .footer-grille {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-marque {
+        grid-column: 1 / -1;
+      }
+    }
+
+
+    /* ============================================
+       RESPONSIVE — MOBILE
+       ============================================ */
+    @media (max-width: 768px) {
+      html { font-size: 16px; }
+
+      .nav-desktop { display: none; }
+      .btn-hamburger { display: flex; }
+
+      /* Hero 2 colonnes → empilé sur mobile (image en haut) */
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .hero-image {
+        order: -1;
+        min-height: 55vh;
+        max-height: 60vh;
+      }
+
+      .hero-image::before {
+        display: none;
+      }
+
+      .hero-image::after {
+        height: 80px;
+        background: linear-gradient(to top, var(--fond-principal), transparent);
+      }
+
+      .hero-texte {
+        padding: 2rem 1.5rem 3rem;
+        text-align: center;
+        align-items: center;
+      }
+
+      .hero-texte::before {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: clamp(2rem, 7vw, 2.6rem);
+      }
+
+      .hero-description {
+        max-width: 100%;
+      }
+
+      .hero-ctas {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .hero-ctas .btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .hero-confiance {
+        justify-content: center;
+      }
+
+      .bandeau-confiance .conteneur {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+      }
+
+      .grille-guides {
+        grid-template-columns: 1fr;
+      }
+
+      .carte-guide:first-child .carte-guide-inner {
+        flex-direction: column;
+      }
+
+      .carte-guide:first-child .carte-guide-visuel {
+        max-width: 100%;
+      }
+
+      .apropos-grille {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .apropos-portrait::before {
+        display: none;
+      }
+
+      .grille-avant-apres {
+        grid-template-columns: 1fr;
+      }
+
+      .grille-temoignages {
+        grid-template-columns: 1fr;
+      }
+
+      .newsletter-form {
+        flex-direction: column;
+      }
+
+      .footer-grille {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .section-guides, .section-apropos, .section-avant-apres,
+      .section-temoignages, .section-faq {
+        padding: 4rem 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============================================
+       HEADER — Navigation principale
+       ============================================ -->
+  <header class="header" id="header" role="banner">
+    <div class="conteneur">
+      <a href="#" class="logo" aria-label="Morel Skin Lab — Accueil">Morel Skin <span>Lab</span></a>
+
+      <nav class="nav-desktop" role="navigation" aria-label="Navigation principale">
+        <a href="#hero">Accueil</a>
+        <a href="#guides">Nos Guides</a>
+        <a href="#apropos">À propos</a>
+        <a href="#temoignages">Témoignages</a>
+        <a href="#faq">Contact</a>
+        <div class="icone-panier" aria-label="Panier">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="badge-panier">0</span>
+        </div>
+      </nav>
+
+      <!-- Bouton menu mobile -->
+      <button class="btn-hamburger" id="btnHamburger" aria-label="Ouvrir le menu de navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Navigation mobile plein écran -->
+  <nav class="nav-mobile" id="navMobile" role="navigation" aria-label="Menu mobile">
+    <a href="#hero" class="lien-mobile">Accueil</a>
+    <a href="#guides" class="lien-mobile">Nos Guides</a>
+    <a href="#apropos" class="lien-mobile">À propos</a>
+    <a href="#temoignages" class="lien-mobile">Témoignages</a>
+    <a href="#faq" class="lien-mobile">Contact</a>
+  </nav>
+
+
+  <!-- ============================================
+       HERO SECTION — Layout 2 colonnes magazine
+       ============================================ -->
+  <section class="hero" id="hero">
+
+    <!-- Colonne gauche : contenu texte -->
+    <div class="hero-texte">
+      <span class="sur-titre anime-entree">Soins Anti-Âge Premium</span>
+      <h1 class="anime-entree anime-delai-1">Révélez l'Éclat de Votre Peau à Tout Âge</h1>
+      <p class="hero-description anime-entree anime-delai-2">Des guides experts conçus par le Dr&nbsp;Julien Morel pour transformer votre routine beauté après 45&nbsp;ans. Science, nature et élégance au service de votre peau.</p>
+      <div class="hero-ctas anime-entree anime-delai-3">
+        <a href="#guides" class="btn btn-primaire">Découvrir nos guides</a>
+        <a href="#apropos" class="btn btn-secondaire">En savoir plus</a>
+      </div>
+      <div class="hero-confiance anime-entree anime-delai-4">
+        <span class="etoiles-mini">★★★★★</span>
+        <span>Approuvé par plus de 10&nbsp;000 femmes</span>
+      </div>
+    </div>
+
+    <!-- Colonne droite : photo magazine -->
+    <div class="hero-image">
+      <img 
+        src="https://images.unsplash.com/photo-1614093302611-8efc4de12407?w=1200&q=80" 
+        alt="Femme mature élégante avec une peau lumineuse et éclatante"
+        loading="eager"
+        onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1560869713-da86a9ec0744?w=1200&q=80';"
+      >
+    </div>
+
+  </section>
+
+
+  <!-- ============================================
+       BANDEAU DE CONFIANCE
+       ============================================ -->
+  <div class="bandeau-confiance">
+    <div class="conteneur">
+      <span class="bandeau-item"><span class="check">✓</span> Approuvé par plus de 10 000 femmes</span>
+      <span class="bandeau-item"><span class="check">✓</span> Basé sur la science dermatologique</span>
+      <span class="bandeau-item"><span class="check">✓</span> Téléchargement instantané PDF</span>
+      <span class="bandeau-item"><span class="check">✓</span> Garantie satisfait ou remboursé 30 jours</span>
+    </div>
+  </div>
+
+
+  <!-- ============================================
+       SECTION NOS GUIDES (EBOOKS)
+       ============================================ -->
+  <section class="section-guides" id="guides">
+    <div class="conteneur">
+      <div class="section-entete anime-entree">
+        <span class="sur-titre">Collection Exclusive</span>
+        <h2>Nos Guides Beauté</h2>
+        <p>Cinq protocoles experts pour retrouver une peau éclatante, ferme et lumineuse — naturellement.</p>
+      </div>
+
+      <div class="grille-guides">
+
+        <!-- Guide I — Le Protocole Anti-Rides Naturel -->
+        <div class="carte-guide anime-entree">
+          <div class="carte-guide-inner">
+            <div class="carte-guide-visuel">
+              <img src="https://picsum.photos/id/1027/800/500" alt="Le Protocole Anti-Rides Naturel — couverture">
+              <span class="numero-romain">I</span>
+            </div>
+            <div class="carte-guide-contenu">
+              <h3>Le Protocole Anti-Rides Naturel</h3>
+              <p>Routine complète et scientifiquement prouvée pour atténuer rides et ridules après 45&nbsp;ans. Techniques de massage facial, sérums recommandés et habitudes quotidiennes.</p>
+              <div class="prix-bloc">
+                <span class="prix-barre">29&nbsp;€</span>
+                <span class="prix-actuel">19&nbsp;€</span>
+                <span class="badge-promo">-35%</span>
+              </div>
+              <a href="#" class="btn btn-dore" aria-label="Obtenir Le Protocole Anti-Rides Naturel">Obtenir ce guide</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Guide II — Solutions Naturelles -->
+        <div class="carte-guide anime-entree anime-delai-1">
+          <div class="carte-guide-inner">
+            <div class="carte-guide-visuel">
+              <img src="https://picsum.photos/id/225/600/400" alt="Solutions Naturelles aux Problèmes de Peau — couverture">
+              <span class="numero-romain">II</span>
+            </div>
+            <div class="carte-guide-contenu">
+              <h3>Le Guide des Solutions Naturelles aux Problèmes de Peau</h3>
+              <p>Remèdes maison efficaces pour traiter taches, rougeurs et imperfections avec des ingrédients simples.</p>
+              <div class="prix-bloc">
+                <span class="prix-barre">29&nbsp;€</span>
+                <span class="prix-actuel">19&nbsp;€</span>
+                <span class="badge-promo">-35%</span>
+              </div>
+              <a href="#" class="btn btn-dore" aria-label="Obtenir le guide Solutions Naturelles">Obtenir ce guide</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Guide III — 10 Recettes Maison -->
+        <div class="carte-guide anime-entree anime-delai-2">
+          <div class="carte-guide-inner">
+            <div class="carte-guide-visuel">
+              <img src="https://picsum.photos/id/292/600/400" alt="10 Recettes Maison pour un Visage Éclatant — couverture">
+              <span class="numero-romain">III</span>
+            </div>
+            <div class="carte-guide-contenu">
+              <h3>10 Recettes Maison pour un Visage Éclatant</h3>
+              <p>Soins DIY avec des ingrédients naturels accessibles pour un teint lumineux et uniforme.</p>
+              <div class="prix-bloc">
+                <span class="prix-barre">29&nbsp;€</span>
+                <span class="prix-actuel">19&nbsp;€</span>
+                <span class="badge-promo">-35%</span>
+              </div>
+              <a href="#" class="btn btn-dore" aria-label="Obtenir le guide 10 Recettes Maison">Obtenir ce guide</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Guide IV — Cou et Décolleté Jeune -->
+        <div class="carte-guide anime-entree anime-delai-1">
+          <div class="carte-guide-inner">
+            <div class="carte-guide-visuel">
+              <img src="https://picsum.photos/id/399/600/400" alt="Le Secret du Cou et Décolleté Jeune — couverture">
+              <span class="numero-romain">IV</span>
+            </div>
+            <div class="carte-guide-contenu">
+              <h3>Le Secret du Cou et Décolleté Jeune</h3>
+              <p>Techniques ciblées pour les zones qui trahissent l'âge : massages, crèmes et exercices spécifiques.</p>
+              <div class="prix-bloc">
+                <span class="prix-barre">29&nbsp;€</span>
+                <span class="prix-actuel">19&nbsp;€</span>
+                <span class="badge-promo">-35%</span>
+              </div>
+              <a href="#" class="btn btn-dore" aria-label="Obtenir le guide Cou et Décolleté">Obtenir ce guide</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Guide V — Lifting Facial Naturel -->
+        <div class="carte-guide anime-entree anime-delai-2">
+          <div class="carte-guide-inner">
+            <div class="carte-guide-visuel">
+              <img src="https://picsum.photos/id/550/600/400" alt="La Méthode Lifting Facial Naturel — couverture">
+              <span class="numero-romain">V</span>
+            </div>
+            <div class="carte-guide-contenu">
+              <h3>La Méthode Lifting Facial Naturel</h3>
+              <p>Exercices et massages ciblés pour raffermir l'ovale du visage sans chirurgie ni injections.</p>
+              <div class="prix-bloc">
+                <span class="prix-barre">29&nbsp;€</span>
+                <span class="prix-actuel">19&nbsp;€</span>
+                <span class="badge-promo">-35%</span>
+              </div>
+              <a href="#" class="btn btn-dore" aria-label="Obtenir le guide Lifting Facial Naturel">Obtenir ce guide</a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.grille-guides -->
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       SECTION À PROPOS DU DR MOREL
+       ============================================ -->
+  <section class="section-apropos" id="apropos">
+    <div class="conteneur">
+      <div class="apropos-grille">
+        <div class="apropos-portrait anime-entree">
+          <img src="https://picsum.photos/id/338/600/750" alt="Dr Julien Morel, dermatologue expert en anti-âge">
+        </div>
+        <div class="apropos-texte anime-entree anime-delai-2">
+          <span class="sur-titre">Votre Expert</span>
+          <h2>Dr Julien Morel</h2>
+          <div class="trait-dore"></div>
+          <p>Dermatologue spécialisé en médecine anti-âge depuis plus de 20&nbsp;ans, le Dr&nbsp;Julien Morel a consacré sa carrière à l'étude du vieillissement cutané et des solutions naturelles pour préserver la beauté de la peau. Formé dans les plus grandes institutions médicales européennes, il combine rigueur scientifique et approche holistique.</p>
+          <p>Sa mission : rendre accessibles à toutes les femmes les protocoles de soins habituellement réservés aux cabinets de dermatologie haut de gamme.</p>
+          <ul class="credentials">
+            <li>Diplôme de Dermatologie, Université Paris-Descartes</li>
+            <li>Certificat en Médecine Anti-Âge, Académie Européenne</li>
+            <li>Plus de 15 publications dans des revues scientifiques internationales</li>
+            <li>20 ans d'expérience clinique en dermatologie esthétique</li>
+            <li>Conférencier international sur le vieillissement cutané</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       SECTION AVANT / APRÈS
+       ============================================ -->
+  <section class="section-avant-apres" id="resultats">
+    <div class="conteneur">
+      <div class="section-entete anime-entree">
+        <span class="sur-titre">Résultats Prouvés</span>
+        <h2>Des Résultats Visibles</h2>
+        <p>Découvrez les transformations réelles de femmes qui ont suivi les protocoles du Dr&nbsp;Morel.</p>
+      </div>
+
+      <div class="grille-avant-apres">
+
+        <div class="carte-avant-apres anime-entree">
+          <div class="avant-apres-images">
+            <img src="https://picsum.photos/id/1062/400/300" alt="Photo avant le protocole">
+            <img src="https://picsum.photos/id/1012/400/300" alt="Photo après le protocole">
+            <span class="label-avant">Avant</span>
+            <span class="label-apres">Après</span>
+          </div>
+          <div class="avant-apres-texte">
+            <h4>Catherine, 56 ans</h4>
+            <p>Rides du front et pattes d'oie visiblement atténuées après 10&nbsp;semaines de protocole quotidien.</p>
+            <span class="tag-guide">Guide I — Protocole Anti-Rides</span>
+          </div>
+        </div>
+
+        <div class="carte-avant-apres anime-entree anime-delai-1">
+          <div class="avant-apres-images">
+            <img src="https://picsum.photos/id/1005/400/300" alt="Photo avant le protocole">
+            <img src="https://picsum.photos/id/1011/400/300" alt="Photo après le protocole">
+            <span class="label-avant">Avant</span>
+            <span class="label-apres">Après</span>
+          </div>
+          <div class="avant-apres-texte">
+            <h4>Nathalie, 62 ans</h4>
+            <p>Teint unifié et taches brunes estompées grâce aux solutions naturelles en 8&nbsp;semaines.</p>
+            <span class="tag-guide">Guide II — Solutions Naturelles</span>
+          </div>
+        </div>
+
+        <div class="carte-avant-apres anime-entree anime-delai-2">
+          <div class="avant-apres-images">
+            <img src="https://picsum.photos/id/1025/400/300" alt="Photo avant le protocole">
+            <img src="https://picsum.photos/id/1024/400/300" alt="Photo après le protocole">
+            <span class="label-avant">Avant</span>
+            <span class="label-apres">Après</span>
+          </div>
+          <div class="avant-apres-texte">
+            <h4>Isabelle, 49 ans</h4>
+            <p>Ovale du visage raffermi et cou lissé après 12&nbsp;semaines d'exercices et de massages.</p>
+            <span class="tag-guide">Guide V — Lifting Facial Naturel</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       SECTION TÉMOIGNAGES
+       ============================================ -->
+  <section class="section-temoignages" id="temoignages">
+    <div class="conteneur">
+      <div class="section-entete anime-entree">
+        <span class="sur-titre">Témoignages</span>
+        <h2>Elles Ont Transformé Leur Peau</h2>
+        <p>Plus de 10&nbsp;000 femmes nous font confiance. Voici leurs expériences.</p>
+      </div>
+
+      <div class="grille-temoignages">
+
+        <div class="carte-temoignage anime-entree">
+          <div class="temoignage-header">
+            <img src="https://picsum.photos/id/64/100/100" alt="Photo de Françoise" class="temoignage-photo">
+            <div>
+              <div class="temoignage-nom">Françoise</div>
+              <div class="temoignage-age">62 ans — Lyon</div>
+            </div>
+          </div>
+          <div class="etoiles">★★★★★</div>
+          <blockquote>À 62&nbsp;ans, je pensais qu'il était trop tard pour ma peau. Le protocole du Dr&nbsp;Morel m'a prouvé le contraire. En 8&nbsp;semaines, mes rides du front se sont nettement atténuées.</blockquote>
+          <span class="temoignage-guide">Guide I — Protocole Anti-Rides</span>
+        </div>
+
+        <div class="carte-temoignage anime-entree anime-delai-1">
+          <div class="temoignage-header">
+            <img src="https://picsum.photos/id/65/100/100" alt="Photo de Martine" class="temoignage-photo">
+            <div>
+              <div class="temoignage-nom">Martine</div>
+              <div class="temoignage-age">58 ans — Bordeaux</div>
+            </div>
+          </div>
+          <div class="etoiles">★★★★★</div>
+          <blockquote>Mes taches brunes me complexaient depuis des années. Grâce au guide du Dr&nbsp;Morel, j'ai retrouvé un teint lumineux et uniforme en seulement 6&nbsp;semaines. C'est un vrai miracle !</blockquote>
+          <span class="temoignage-guide">Guide II — Solutions Naturelles</span>
+        </div>
+
+        <div class="carte-temoignage anime-entree anime-delai-2">
+          <div class="temoignage-header">
+            <img src="https://picsum.photos/id/177/100/100" alt="Photo de Sylvie" class="temoignage-photo">
+            <div>
+              <div class="temoignage-nom">Sylvie</div>
+              <div class="temoignage-age">53 ans — Paris</div>
+            </div>
+          </div>
+          <div class="etoiles">★★★★★</div>
+          <blockquote>J'adore les recettes maison ! Simples à préparer, ingrédients faciles à trouver, et surtout des résultats visibles. Mon entourage me demande mon secret depuis des semaines.</blockquote>
+          <span class="temoignage-guide">Guide III — 10 Recettes Maison</span>
+        </div>
+
+        <div class="carte-temoignage anime-entree">
+          <div class="temoignage-header">
+            <img src="https://picsum.photos/id/203/100/100" alt="Photo de Monique" class="temoignage-photo">
+            <div>
+              <div class="temoignage-nom">Monique</div>
+              <div class="temoignage-age">67 ans — Nice</div>
+            </div>
+          </div>
+          <div class="etoiles">★★★★★</div>
+          <blockquote>Mon cou me trahissait. Depuis que je suis le protocole du guide IV, la peau de mon décolleté est visiblement plus ferme. Je porte à nouveau mes colliers avec fierté !</blockquote>
+          <span class="temoignage-guide">Guide IV — Cou et Décolleté</span>
+        </div>
+
+        <div class="carte-temoignage anime-entree anime-delai-1">
+          <div class="temoignage-header">
+            <img src="https://picsum.photos/id/219/100/100" alt="Photo de Christine" class="temoignage-photo">
+            <div>
+              <div class="temoignage-nom">Christine</div>
+              <div class="temoignage-age">55 ans — Bruxelles</div>
+            </div>
+          </div>
+          <div class="etoiles">★★★★★</div>
+          <blockquote>Le lifting facial naturel a complètement changé mon quotidien. 15&nbsp;minutes par jour et mon visage paraît plus tonique et reposé. Mes amies n'en reviennent pas.</blockquote>
+          <span class="temoignage-guide">Guide V — Lifting Facial Naturel</span>
+        </div>
+
+        <div class="carte-temoignage anime-entree anime-delai-2">
+          <div class="temoignage-header">
+            <img src="https://picsum.photos/id/342/100/100" alt="Photo de Véronique" class="temoignage-photo">
+            <div>
+              <div class="temoignage-nom">Véronique</div>
+              <div class="temoignage-age">60 ans — Genève</div>
+            </div>
+          </div>
+          <div class="etoiles">★★★★★</div>
+          <blockquote>J'ai acheté les 5&nbsp;guides et je ne regrette absolument rien. C'est un investissement incroyable pour prendre soin de soi naturellement. Les explications sont claires et les résultats au rendez-vous.</blockquote>
+          <span class="temoignage-guide">Collection Complète</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       SECTION FAQ
+       ============================================ -->
+  <section class="section-faq" id="faq">
+    <div class="conteneur">
+      <div class="section-entete anime-entree">
+        <span class="sur-titre">Aide</span>
+        <h2>Questions Fréquentes</h2>
+      </div>
+
+      <div class="faq-conteneur">
+
+        <div class="faq-item anime-entree">
+          <button class="faq-question" aria-expanded="false">
+            Comment vais-je recevoir mon ebook après l'achat ?
+            <span class="faq-icone">+</span>
+          </button>
+          <div class="faq-reponse" role="region">
+            <div class="faq-reponse-inner">
+              <p>Dès votre paiement confirmé, vous recevrez un email avec un lien de téléchargement instantané. Votre guide est au format PDF, lisible sur tous vos appareils — ordinateur, tablette et smartphone.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item anime-entree">
+          <button class="faq-question" aria-expanded="false">
+            Les conseils sont-ils adaptés à tous les types de peau ?
+            <span class="faq-icone">+</span>
+          </button>
+          <div class="faq-reponse" role="region">
+            <div class="faq-reponse-inner">
+              <p>Oui, chaque guide inclut des recommandations spécifiques selon votre type de peau (sèche, grasse, mixte, sensible). Le Dr&nbsp;Morel a conçu des protocoles adaptables à toutes les peaux matures.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item anime-entree">
+          <button class="faq-question" aria-expanded="false">
+            Ai-je besoin de produits coûteux pour suivre les protocoles ?
+            <span class="faq-icone">+</span>
+          </button>
+          <div class="faq-reponse" role="region">
+            <div class="faq-reponse-inner">
+              <p>Absolument pas. Nos guides privilégient les ingrédients naturels et accessibles que vous trouverez en supermarché ou en pharmacie. Certains protocoles n'utilisent que des produits que vous avez déjà chez vous.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item anime-entree">
+          <button class="faq-question" aria-expanded="false">
+            Combien de temps avant de voir des résultats ?
+            <span class="faq-icone">+</span>
+          </button>
+          <div class="faq-reponse" role="region">
+            <div class="faq-reponse-inner">
+              <p>Les premiers résultats sont généralement visibles entre 3 et 6&nbsp;semaines de pratique régulière. Des améliorations significatives apparaissent entre 8 et 12&nbsp;semaines. Chaque peau étant unique, les résultats peuvent varier.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item anime-entree">
+          <button class="faq-question" aria-expanded="false">
+            Puis-je obtenir un remboursement ?
+            <span class="faq-icone">+</span>
+          </button>
+          <div class="faq-reponse" role="region">
+            <div class="faq-reponse-inner">
+              <p>Bien sûr. Nous offrons une garantie satisfait ou remboursé de 30&nbsp;jours. Si nos guides ne vous conviennent pas, contactez-nous et nous procéderons au remboursement intégral sans poser de questions.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item anime-entree">
+          <button class="faq-question" aria-expanded="false">
+            Les ebooks sont-ils en français ?
+            <span class="faq-icone">+</span>
+          </button>
+          <div class="faq-reponse" role="region">
+            <div class="faq-reponse-inner">
+              <p>Oui, tous nos guides sont rédigés intégralement en français par le Dr&nbsp;Morel, dans un langage clair et accessible. Pas de jargon médical inutile.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item anime-entree">
+          <button class="faq-question" aria-expanded="false">
+            Sur quels appareils puis-je lire les ebooks ?
+            <span class="faq-icone">+</span>
+          </button>
+          <div class="faq-reponse" role="region">
+            <div class="faq-reponse-inner">
+              <p>Nos guides au format PDF sont compatibles avec tous les appareils : iPhone, iPad, Android, Mac, PC, et liseuses numériques. Vous pouvez les lire en ligne ou les imprimer si vous le souhaitez.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item anime-entree">
+          <button class="faq-question" aria-expanded="false">
+            Le Dr Morel propose-t-il un suivi personnalisé ?
+            <span class="faq-icone">+</span>
+          </button>
+          <div class="faq-reponse" role="region">
+            <div class="faq-reponse-inner">
+              <p>Actuellement, le Dr&nbsp;Morel ne propose pas de consultations individuelles via cette plateforme. Cependant, nos guides sont conçus pour être autonomes et complets. Pour toute question spécifique, notre équipe de support est à votre disposition par email.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       SECTION NEWSLETTER
+       ============================================ -->
+  <section class="section-newsletter" id="newsletter">
+    <div class="conteneur">
+      <div class="newsletter-conteneur anime-entree">
+        <span class="sur-titre" style="color: var(--texte-principal);">Newsletter</span>
+        <h2>Recevez Nos Secrets Beauté</h2>
+        <p>Rejoignez 15&nbsp;000 femmes qui reçoivent chaque semaine nos conseils exclusifs anti-âge directement dans leur boîte email.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="Votre adresse email" aria-label="Votre adresse email" required>
+          <button class="btn btn-primaire" type="button">S'inscrire</button>
+        </div>
+        <p class="newsletter-petit-texte">🎁 Cadeau de bienvenue : extrait gratuit de notre guide best-seller</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="conteneur">
+      <div class="footer-grille">
+
+        <div class="footer-marque">
+          <span class="logo">Morel Skin <span>Lab</span></span>
+          <p>Des guides beauté experts pour révéler l'éclat de votre peau à tout âge. Science, nature et élégance réunies.</p>
+          <div class="footer-reseaux">
+            <a href="#" aria-label="Instagram">Ig</a>
+            <a href="#" aria-label="Facebook">Fb</a>
+            <a href="#" aria-label="YouTube">Yt</a>
+            <a href="#" aria-label="Pinterest">Pi</a>
+          </div>
+        </div>
+
+        <div class="footer-colonne">
+          <h4>Nos Guides</h4>
+          <ul>
+            <li><a href="#">Protocole Anti-Rides</a></li>
+            <li><a href="#">Solutions Naturelles</a></li>
+            <li><a href="#">Recettes Maison</a></li>
+            <li><a href="#">Cou et Décolleté</a></li>
+            <li><a href="#">Lifting Facial</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-colonne">
+          <h4>À propos</h4>
+          <ul>
+            <li><a href="#">Dr Julien Morel</a></li>
+            <li><a href="#">Notre Mission</a></li>
+            <li><a href="#">Presse</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-colonne">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Nous contacter</a></li>
+            <li><a href="#">Livraison</a></li>
+            <li><a href="#">Remboursement</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-colonne">
+          <h4>Légal</h4>
+          <ul>
+            <li><a href="#">CGV</a></li>
+            <li><a href="#">Mentions légales</a></li>
+            <li><a href="#">Confidentialité</a></li>
+            <li><a href="#">Cookies</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bas">
+        <p>© 2026 Morel Skin Lab — Tous droits réservés</p>
+        <p>Les résultats peuvent varier d'une personne à l'autre. Ces guides ne remplacent pas une consultation médicale.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ============================================
+       JAVASCRIPT — Interactions et animations
+       ============================================ -->
+  <script>
+    /* --- Header : changement au scroll --- */
+    (function() {
+      const header = document.getElementById('header');
+      let dernierScroll = 0;
+
+      window.addEventListener('scroll', function() {
+        const scrollActuel = window.scrollY;
+        if (scrollActuel > 60) {
+          header.classList.add('defilement');
+        } else {
+          header.classList.remove('defilement');
+        }
+        dernierScroll = scrollActuel;
+      }, { passive: true });
+    })();
+
+
+    /* --- Navigation mobile : hamburger --- */
+    (function() {
+      const btnHamburger = document.getElementById('btnHamburger');
+      const navMobile = document.getElementById('navMobile');
+      const liensMobiles = navMobile.querySelectorAll('.lien-mobile');
+
+      btnHamburger.addEventListener('click', function() {
+        const estOuvert = btnHamburger.classList.toggle('ouvert');
+        navMobile.classList.toggle('ouverte');
+        btnHamburger.setAttribute('aria-expanded', estOuvert);
+        document.body.style.overflow = estOuvert ? 'hidden' : '';
+      });
+
+      // Fermer le menu quand on clique sur un lien
+      liensMobiles.forEach(function(lien) {
+        lien.addEventListener('click', function() {
+          btnHamburger.classList.remove('ouvert');
+          navMobile.classList.remove('ouverte');
+          btnHamburger.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        });
+      });
+    })();
+
+
+    /* --- Animations au scroll (IntersectionObserver) --- */
+    (function() {
+      const elements = document.querySelectorAll('.anime-entree');
+
+      if ('IntersectionObserver' in window) {
+        const observateur = new IntersectionObserver(function(entrees) {
+          entrees.forEach(function(entree) {
+            if (entree.isIntersecting) {
+              entree.target.classList.add('visible');
+              observateur.unobserve(entree.target);
+            }
+          });
+        }, {
+          threshold: 0.1,
+          rootMargin: '0px 0px -40px 0px'
+        });
+
+        elements.forEach(function(el) {
+          observateur.observe(el);
+        });
+      } else {
+        // Fallback : tout rendre visible immédiatement
+        elements.forEach(function(el) {
+          el.classList.add('visible');
+        });
+      }
+    })();
+
+
+    /* --- FAQ : Accordéon --- */
+    (function() {
+      const questions = document.querySelectorAll('.faq-question');
+
+      questions.forEach(function(question) {
+        question.addEventListener('click', function() {
+          const item = this.parentElement;
+          const reponse = item.querySelector('.faq-reponse');
+          const estOuvert = item.classList.contains('ouvert');
+
+          // Fermer tous les items ouverts
+          document.querySelectorAll('.faq-item.ouvert').forEach(function(ouvert) {
+            ouvert.classList.remove('ouvert');
+            ouvert.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+            ouvert.querySelector('.faq-reponse').style.maxHeight = '0';
+          });
+
+          // Ouvrir l'item courant si il n'était pas déjà ouvert
+          if (!estOuvert) {
+            item.classList.add('ouvert');
+            this.setAttribute('aria-expanded', 'true');
+            reponse.style.maxHeight = reponse.scrollHeight + 'px';
+          }
+        });
+      });
+    })();
+
+
+    /* --- Smooth scroll pour les ancres --- */
+    (function() {
+      document.querySelectorAll('a[href^="#"]').forEach(function(ancre) {
+        ancre.addEventListener('click', function(e) {
+          const cible = document.querySelector(this.getAttribute('href'));
+          if (cible) {
+            e.preventDefault();
+            const offsetHeader = 80;
+            const positionCible = cible.getBoundingClientRect().top + window.scrollY - offsetHeader;
+            window.scrollTo({
+              top: positionCible,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    })();
+
+
+    /* --- Newsletter : feedback visuel au clic --- */
+    (function() {
+      const btnNewsletter = document.querySelector('.newsletter-form .btn');
+      const inputEmail = document.querySelector('.newsletter-form input[type="email"]');
+
+      if (btnNewsletter && inputEmail) {
+        btnNewsletter.addEventListener('click', function() {
+          if (inputEmail.value && inputEmail.value.includes('@')) {
+            btnNewsletter.textContent = 'Merci ! ✓';
+            btnNewsletter.style.background = '#6B8E5A';
+            inputEmail.value = '';
+            setTimeout(function() {
+              btnNewsletter.textContent = "S'inscrire";
+              btnNewsletter.style.background = '';
+            }, 3000);
+          } else {
+            inputEmail.style.borderColor = '#D4A5A5';
+            inputEmail.focus();
+            setTimeout(function() {
+              inputEmail.style.borderColor = '';
+            }, 2000);
+          }
+        });
+      }
+    })();
+  </script>
+
+</body>
+</html>
